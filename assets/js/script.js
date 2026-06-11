@@ -118,17 +118,14 @@ class Biblioteca {
     let peliculaEncontrada = null;
     
     for (let i = 0; i < this.#peliculas.length; i++) {
-      // Usamos .search() para buscar coincidencias en el título.
-      // Retorna -1 si no encuentra el texto.
       if (this.#peliculas[i].titulo.search(titulo) !== -1) {
         peliculaEncontrada = this.#peliculas[i];
-        break; // Detenemos la búsqueda al encontrar la primera coincidencia
+        break; 
       }
     }
 
     if (peliculaEncontrada) {
       if (!peliculaEncontrada.disponible) {
-        // Se agregó el doble emoji y el mensaje de ERROR solicitado
         console.error("ERROR: La película no está disponible temporalmente.");
         return;
       }
